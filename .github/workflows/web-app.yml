@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 env:
-  APP_LOCATION: "./shortix-web-app/"
+  APP_LOCATION: "./"
 
 permissions:
   id-token: write
@@ -93,7 +93,6 @@ jobs:
     name: "Build and Deploy to Production"
     environment: Production
     needs: build_and_deploy_stg
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     steps:
       - uses: actions/checkout@v4
         with:
