@@ -7,9 +7,9 @@ function ListUrls({ urls, responseContinuationToken, onLoadMore }) {
     return (
         <div className="url-list">
             {urls && urls.map((url) => (
-                <div key={url.shortUrl} className="url-item">
-                    <a href={`${baseUrl}/r/${url.shortUrl}`} className="short-url">
-                        {url.shortUrl}
+                <div key={url.shortUrlId} className="url-item">
+                    <a href={`${baseUrl}/r/${url.shortUrlId}`} className="short-url" target="_blank" rel="noreferrer">
+                        {url.shortUrlId}
                     </a>
                     {" → "}
                     <a href={url.longUrl} className="long-url">
